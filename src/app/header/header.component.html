@@ -1,0 +1,35 @@
+<header>
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" routerLink="dashboard">INVOICEING</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="dashboard">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  routerLink="followup">Today</a>
+        </li>
+       
+        <li class="nav-item">
+            <a class="nav-link " routerLink="product">Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " routerLink="vendor">Vendor</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link " routerLink="customer">Costomer</a>
+          </li>    
+          <li class="nav-item active">
+            <a class="nav-link"href="javascript:void(0)"(click)="logout()">
+             <u> {{name}} -{{id}}</u>Log out</a>
+          </li>         
+
+      </ul>
+      
+    </div>
+  </nav>
+</header>

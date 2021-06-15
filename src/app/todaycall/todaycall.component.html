@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-7">
+            <table class="table table-bordered table-hover table-sm">
+                <thead>
+                    <tr class="bg-primary text-white">
+                        <th>Name</th>
+                        <th>Mobile No</th>
+                        <th>Product</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                        <tr *ngFor="let call of allcall">
+                            <td>{{call.name}}</td>
+                            <td>{{call.mobile}}</td>
+                            <td>{{call.product}}</td>
+                            <td>
+                              <button class="btn btn-info btn-sm"(click)="editinfo(call.id)">edit</button> 
+                            </td>
+                        </tr>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+        </div>
+
+
+        <div class="col-md-5" *ngIf="edit">
+            <textarea [(ngModel)]="msg" class="form-control" placeholder="New Update Write Here" rows="5"></textarea><br>
+            <div class="row form-group">
+                <div class="col-md-6">
+                    <input type="date"[(ngModel)]="nextcall" placeholder="next call date">
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control form-control-sm"[(ngModel)]="status">
+                        <option>Discussed</option>
+                        <option>Disconnected</option>
+                        <option>Switch off</option>
+                        <option>Not instrested</option>
+                        <option>Purchad aleredy</option>
+                    </select>
+                </div>            
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <button class="btn btn-primary" (click)="savemessage()">Update</button>
+                </div>
+            </div><br><br>
+
+            <table class="table table-bordered table-hover table-sm">
+                <thead>
+                    <tr class="bg-primary text-white">
+                        <th>Message</th>
+                        <th>Status</th>
+                        <th>Call Date</th>
+
+                    </tr>
+                </thead>
+                    
+                <tbody>
+                    <tr *ngFor="let message of historymsg">
+                        <td>{{message.message}}</td>
+                        <td>{{message.status}}</td>
+                        <td>{{message.calldate}}</td>
+                    </tr>
+                </tbody>
+                
+            </table>
+
+        </div>
+    </div>
+</div>

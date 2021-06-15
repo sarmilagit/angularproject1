@@ -1,0 +1,9 @@
+.footer{
+    text-align:center !important;
+    background:darkblue;
+    color:white !important;;
+    min-height:120px;
+}
+.text-muted{
+    color:white !important;
+}

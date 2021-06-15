@@ -1,0 +1,91 @@
+<br>
+<br>
+<div class="container">
+    
+  <div class="row form-group">
+        <div class="col-md-3 text-center">
+            <h3 class="text-info">Add Costomer</h3>
+        </div>
+        <div class="col-md-6">
+        <h3 class="text-info text-center">{{allcustomer.length}} :-Customer List</h3>
+        </div>
+        <div class="col-md-3 text-center"><i>Search here..</i><input type="text" class="form-control form-control-sm">
+         </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Customer Name</label>
+                <input type="text" class="form-control" [(ngModel)]="cname">
+            </div>
+            <div class="form-group">
+                <label>Contact No.r </label>
+                <input type="text" class="form-control" [(ngModel)]="cmobile">
+            </div>
+            <div class="form-group">
+                <label>Product</label>
+                <select class="form-control" [(ngModel)]="cproduct">
+                    <option value="">--choose--</option>
+                    <option *ngFor="let p of allproduct" value="{{p.name}}">{{p.name}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Quantity</label>
+                <input type="number" class="form-control"[(ngModel)]="qty">
+            </div>
+            <div class="form-group">
+                <label>Price/Unit</label>
+                <input type="number" class="form-control"[(ngModel)]="price">
+            </div>
+            <h4> Sub Total: {{qty * price}}</h4>
+            
+            <button type="button" class="btn btn-primary btn-block" (click)="save()">Save</button>
+
+        </div>
+
+        <div class="col-md-9">
+                <table class="table table-bordered table-hover table-sm ">
+                    <thead class="bg-primary">
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Mobile Number</th>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Price/Unit</th>
+                            <th>Total Price</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody >
+                                    <tr *ngFor="let customer of allcustomer">
+                                        <td>{{customer.id}}</td>
+                                        <td>{{customer.name}}</td>
+                                        <td>{{customer.mobile}}</td>
+                                        <td>{{customer.product}}</td>
+                                        <td>{{customer.qty}}</td>
+                                        <td>{{customer.price}}</td>
+                                        <td>{{customer.qty * customer.price}}</td>
+                                       
+                                    </tr>
+                    </tbody>
+                    <tfoot class="bg-secondary text-white">
+                        <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Mobile Number</th>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Price/Unit</th>
+                                <th>Total Price</th>
+                               
+                        </tr>
+                    </tfoot>
+
+                </table>
+        </div>
+
+    </div>
+
+</div>

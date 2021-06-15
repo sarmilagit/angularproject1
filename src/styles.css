@@ -1,0 +1,16 @@
+@import url("../node_modules/bootstrap/dist/css/bootstrap.css"); 
+@import url("../node_modules/bootstrap/fa/css/all.css"); 
+@import url("../node_modules/bootstrap/dist/css/sticky-footer-navbar.css");
+
+body{
+    padding-top: 65px;
+}
+
+main{
+    min-height: 600px;
+}
+.loginborder{
+    border:2px solid skyblue;
+    border-radius:10px;
+    padding:10px;
+}
